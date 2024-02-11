@@ -6,7 +6,6 @@ private:
     int id;
     std::string password;
     int balance;
-    static int current_id;
 public:
     account();
     void set_id(int id);
