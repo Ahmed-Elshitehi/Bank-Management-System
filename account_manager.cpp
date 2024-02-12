@@ -61,9 +61,22 @@ void account_manager::AccessSystem() {
         SignUp();
 }
 
+void account_manager::Withdraw() {
+    std::cout << "Enter Amount of money : ";
+    int amount;
+    std::cin >> amount;
+    if (current_account->available_to_use(amount)) {
+        current_account->Reduse_balance(amount);
+    } else {
+        std::cout << "You don't have enough money to Withdraw.\n";
+    }
+    std::cout << "Your current balance is "
+              << current_account->Get_balance() << '\n';
+}
+
 void account_manager::Send() {
     int id;
-    std::cout << "Enter Resever ID : ";
+    std::cout << "Enter the recipient ID : ";
     std::cin >> id;
     std::cout << "Enter Amount of money : ";
     int amount;
@@ -74,16 +87,31 @@ void account_manager::Send() {
         std::cout << current_account->Get_user_name() << " Send " << amount << " to " << accounts[id]->Get_user_name()
                   << '\n';
     } else {
-        std::cout << "You don't have enough money to Transfer to  " << accounts[id]->Get_user_name() << '\n';
+        std::cout << "You don't have enough money to Transfer \n";
     }
 }
 
 void account_manager::View() {
-    system("CLS");
-    int choice;
-    std::cout << "\t1: View Profile\n";
-    std::cout << "\t2: Withdraw\n";
-    std::cout << "\t3: Transfer To\n";
-    std::cout << "\t4: View Profile\n";
+    std::cout << "\n\nHello " << current_account->Get_user_name() << '\n';
+    while (true) {
+        int choice;
+        std::cout << "\t1: View Profile\n";
+        std::cout << "\t2: Withdraw\n";
+        std::cout << "\t3: Deposit money\n";
+        std::cout << "\t4: Transfer To\n";
+        std::cout << "\t5: Logout\n";
+        std::cin >> choice;
+        if (choice == 1) {
+            current_account->PrintInfo();
+        } else if (choice == 2) {
+            Withdraw();
+        } else if (choice == 3) {
+
+        } else if (choice == 4) {
+            Send();
+        } else {
+            break;
+        }
+    }
 }
 

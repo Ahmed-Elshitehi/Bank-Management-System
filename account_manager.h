@@ -12,6 +12,7 @@ public:
     void SignUp();
     void AccessSystem();
     void View();
+    void Withdraw();
     void Send();
     void LoadDatabase();
     ~account_manager();
