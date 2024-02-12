@@ -8,10 +8,9 @@ private:
     std::string user_name;
     int balance;
     static int current_id;
-    const bool available_to_use(int &value) const;
 public:
     account();
-    void Set_id(int id);
+    const bool available_to_use(int &value) const;
     void Set_balance(int balance);
     void Set_password(std::string password);
     void Set_user_name(std:: string);
@@ -19,8 +18,9 @@ public:
     const int &Get_balance() const;
     const std::string &Get_user_name() const;
     const std::string &Get_password() const;
-    bool withdraw(int value);
-    void deposit(int value);
+    void Add_balance(int value);
+    void Reduse_balance(int value);
+    void PrintInfo();
 };
 
 
