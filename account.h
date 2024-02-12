@@ -5,7 +5,10 @@ class account {
 private:
     int id;
     std::string password;
+    std::string user_name;
     int balance;
+    static int current_id;
+    const bool available_to_use(int &value) const;
 public:
     account();
     void set_id(int id);
@@ -14,6 +17,8 @@ public:
     const int &Get_id() const;
     const int &Get_balance() const;
     const std::string &Get_password() const;
+    bool withdraw(int value);
+    void deposit(int value);
 };
 
 
