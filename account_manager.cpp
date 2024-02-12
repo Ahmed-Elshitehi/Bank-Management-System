@@ -67,10 +67,21 @@ void account_manager::Withdraw() {
     std::cin >> amount;
     if (current_account->available_to_use(amount)) {
         current_account->Reduse_balance(amount);
+        std::cout << "Withdraw Done Successfully\n";
     } else {
         std::cout << "You don't have enough money to Withdraw.\n";
     }
     std::cout << "Your current balance is "
+              << current_account->Get_balance() << '\n';
+}
+
+void account_manager::Deposit_money() {
+    std::cout << "Enter Amount of money : ";
+    int amount;
+    std::cin >> amount;
+    current_account->Add_balance(amount);
+    std::cout << "Deposit Done Successfully\n"
+              << "Your current balance is "
               << current_account->Get_balance() << '\n';
 }
 
@@ -106,7 +117,7 @@ void account_manager::View() {
         } else if (choice == 2) {
             Withdraw();
         } else if (choice == 3) {
-
+            Deposit_money();
         } else if (choice == 4) {
             Send();
         } else {

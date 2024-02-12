@@ -13,6 +13,7 @@ public:
     void AccessSystem();
     void View();
     void Withdraw();
+    void Deposit_money();
     void Send();
     void LoadDatabase();
     ~account_manager();
