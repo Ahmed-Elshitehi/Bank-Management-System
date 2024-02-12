@@ -10,6 +10,9 @@ public:
     account_manager();
     void Login();
     void SignUp();
+    void AccessSystem();
+    void View();
+    void Send();
     void LoadDatabase();
     ~account_manager();
 };
