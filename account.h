@@ -11,11 +11,13 @@ private:
     const bool available_to_use(int &value) const;
 public:
     account();
-    void set_id(int id);
-    void set_balance(int balance);
-    void set_password(std::string password);
+    void Set_id(int id);
+    void Set_balance(int balance);
+    void Set_password(std::string password);
+    void Set_user_name(std:: string);
     const int &Get_id() const;
     const int &Get_balance() const;
+    const std::string &Get_user_name() const;
     const std::string &Get_password() const;
     bool withdraw(int value);
     void deposit(int value);

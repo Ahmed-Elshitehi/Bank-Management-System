@@ -15,20 +15,28 @@ const int &account::Get_balance() const {
     return balance;
 }
 
+const std::string &account::Get_user_name() const {
+    return user_name;
+}
+
 const std::string &account::Get_password() const {
     return password;
 }
 
-void account::set_id(int id) {
+void account::Set_id(int id) {
     this->id = id;
 }
 
-void account::set_balance(int balance) {
+void account::Set_balance(int balance) {
     this->balance = balance;
 }
 
-void account::set_password(std::string password) {
+void account::Set_password(std::string password) {
     this->password = password;
+}
+
+void account::Set_user_name(std::string user_name) {
+    this->user_name = user_name;
 }
 
 bool account::withdraw(int value) {
