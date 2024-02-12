@@ -43,4 +43,6 @@ void account_manager::SignUp() {
     std::cout << "Enter password (no spaces): ";
     std::cin >> str;
     current_account->Set_password(str);
+    std::cout << "your ID : " << current_account->Get_id() << '\n';
+    accounts[current_account->Get_id()] = current_account;
 }
