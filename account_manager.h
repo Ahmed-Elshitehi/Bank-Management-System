@@ -11,7 +11,7 @@ public:
     void Login();
     void SignUp();
     void LoadDatabase();
-
+    ~account_manager();
 };
 
 

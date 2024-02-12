@@ -25,3 +25,11 @@ void account_manager::Login() {
         break;
     }
 }
+
+account_manager::~account_manager() {
+    for (auto [id, account]: accounts) {
+        delete account;
+    }
+    accounts.clear();
+    current_account = nullptr;
+}
