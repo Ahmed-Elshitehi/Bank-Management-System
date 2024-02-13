@@ -1,0 +1,12 @@
+# ninja log v5
+1	1211	7295114031788972	CMakeFiles/Bank_Management_System.dir/account_manager.cpp.obj	3c2f7765accced6e
+8	1097	7295114030522368	CMakeFiles/Bank_Management_System.dir/account.cpp.obj	f1038be481d40ebc
+4	131	7295129927476280	CMakeFiles/Bank_Management_System.dir/main.cpp.obj	368ae2b5930d17c7
+1099	1720	7295114036881582	CMakeFiles/Bank_Management_System.dir/system.cpp.obj	e2bf4bd90b10fd4
+1720	2137	7295114041012399	Bank_Management_System.exe	af588aa1aa6c6b9f
+1	465	7295297933404683	build.ninja	2cc412a83ce7b957
+5	800	7295297942625485	CMakeFiles/Bank_Management_System.dir/main.cpp.obj	368ae2b5930d17c7
+10	10668	7295298041090814	CMakeFiles/Bank_Management_System.dir/sqlite/sqlite3.c.obj	ca2b2fefb45dbda4
+10671	10975	7295298044308198	Bank_Management_System.exe	adde37743e81fa43
+5	719	7295298643868244	CMakeFiles/Bank_Management_System.dir/main.cpp.obj	368ae2b5930d17c7
+720	1008	7295298646760509	Bank_Management_System.exe	adde37743e81fa43
