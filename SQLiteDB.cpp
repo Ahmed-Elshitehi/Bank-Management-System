@@ -69,8 +69,7 @@ std::vector<std::vector<std::string>> SQLiteDB::selectData(const char *tableName
     return result;
 }
 
-bool
-SQLiteDB::updateData(const char *tableName, const char *columnName, const char *columnValue, const int id) {
+bool SQLiteDB::updateData(const char *tableName, const char *columnName, const char *columnValue, const int id) {
     std::string query = "UPDATE ";
     query += tableName;
     query += " SET ";
@@ -81,4 +80,24 @@ SQLiteDB::updateData(const char *tableName, const char *columnName, const char *
     query += std::to_string(id);
     query += ";";
     return executeQuery(query.c_str());
+}
+
+int SQLiteDB::getMaxID(const char *tableName) {
+    std::string query = "SELECT MAX(ID) FROM ";
+    query += tableName;
+    query += ";";
+    sqlite3_stmt* statement;
+    int maxID = 0;
+    int rc = sqlite3_prepare_v2(db, query.c_str(), -1, &statement, nullptr);
+    if (rc != SQLITE_OK) {
+        std::cerr << "Error preparing SQL statement: " << sqlite3_errmsg(db) << std::endl;
+        return maxID;
+    }
+
+    if (sqlite3_step(statement) == SQLITE_ROW) {
+        maxID = sqlite3_column_int(statement, 0);
+    }
+
+    sqlite3_finalize(statement);
+    return maxID;
 }
