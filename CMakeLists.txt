@@ -13,4 +13,6 @@ add_executable(Bank_Management_System main.cpp
         system.cpp
         sqlite/sqlite3.h
         sqlite/sqlite3.c
+        SQLiteDB.h
+        SQLiteDB.cpp
 )

@@ -7,10 +7,10 @@ private:
     std::string password;
     std::string user_name;
     int balance;
-    static int current_id;
 public:
     account();
     const bool available_to_use(int &value) const;
+    void Set_id(int id);
     void Set_balance(int balance);
     void Set_password(std::string password);
     void Set_user_name(std:: string);

@@ -1,11 +1,10 @@
 
 #include "account.h"
 
-account::account() : password(""), balance(0), id(++current_id) {
+account::account() : password(""), balance(0), id(0) {
 
 }
 
-int account::current_id = 0;
 
 const int &account::Get_id() const {
     return id;
@@ -51,4 +50,8 @@ void account::PrintInfo() {
     std::cout << "\n";
     std::cout << "user name : " << Get_user_name() << '\t' << "ID : " << Get_id() << '\n';
     std::cout << "Balance : " << Get_balance() << '\n';
+}
+
+void account::Set_id(int id) {
+    this->id = id;
 }
