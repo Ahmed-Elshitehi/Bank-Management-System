@@ -55,10 +55,12 @@ void account_manager::AccessSystem() {
     std::cout << "\nEnter number in range " << "1 - 2: ";
     int choice;
     std::cin >> choice;
-    if (choice == 1)
+    if (choice == 1) {
         Login();
-    else
+        View();
+    } else {
         SignUp();
+    }
 }
 
 void account_manager::Withdraw() {
